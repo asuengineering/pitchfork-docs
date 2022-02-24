@@ -7,13 +7,13 @@
  wp.domReady( () => {
     
     // Add .lead to core/paragraph block.
-    wp.blocks.registerBlockStyle(
-        'core/paragraph', [{
-            name: 'lead',
-            label: 'Lead',
-            isDefault: false,
-        }]
-    );
+    // wp.blocks.registerBlockStyle(
+    //     'core/paragraph', [{
+    //         name: 'lead',
+    //         label: 'Lead',
+    //         isDefault: false,
+    //     }]
+    // );
 
 });
 

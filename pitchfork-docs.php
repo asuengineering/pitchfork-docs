@@ -26,16 +26,44 @@ define( 'PITCHFORK_DOCS_BASE_PATH', plugin_dir_path( __FILE__ ) );
 // Function: Deactivate.
 // Function: Execute plugin.
 
-// TGM Plugin Activation Script. Checks for Advanced Custom Fields.
-// require_once PITCHFORK_BLOCKS_BASE_PATH . '/tgmpa/class-tgm-plugin-activation.php';
-// require_once PITCHFORK_BLOCKS_BASE_PATH . '/tgmpa/dependency-check.php';
-
 // Custom Post Type and Taxonomy Info
 require_once PITCHFORK_DOCS_BASE_PATH . '/inc/cpt-document.php';
 require_once PITCHFORK_DOCS_BASE_PATH . '/inc/tax-document-category.php';
 
 // Enqueue scripts.
 require_once PITCHFORK_DOCS_BASE_PATH . '/inc/enqueue-scripts.php';
+
+// Gamajo Template Loader Script.
+// Checks for the correct template files within the theme, uses included files as a fallback.
+require_once PITCHFORK_DOCS_BASE_PATH . '/inc/template-loader/class-pitchfork-docs-templates.php';
+
+
+add_filter( 'template_include', 'get_pitchfork_docs_templates' );
+function get_pitchfork_docs_templates( $template ) {
+	global $post;
+ 
+    if ( 'pitchfork-docs' === $post->post_type ) {
+		// do_action('qm/debug', 'This is a docs CPT');
+		$docs_template_loader = new Pitchfork_Docs_Template_Loader();
+
+		if ( is_singular() ) {
+			// do_action('qm/debug', 'This is singular template.');
+
+			$docs_template_loader
+				->get_template_part( 'document' );
+
+		} elseif ( is_archive() ) {
+			// do_action('qm/debug', 'This is archive page for all docs.');
+
+			$docs_template_loader
+				->get_template_part( 'archive-document' );
+
+		}
+		
+    }
+
+}
+
 
 // ACF configurations.
 // require_once PITCHFORK_DOCS_BASE_PATH . '/inc/acf-config.php';

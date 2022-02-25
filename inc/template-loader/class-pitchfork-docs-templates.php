@@ -4,14 +4,14 @@
  */
 
 if ( ! class_exists( 'Gamajo_Template_Loader' ) ) {
-  require plugin_dir_path( __FILE__ ) . '/inc/template-loader/class-gamajo-template-loader.php';
+  require plugin_dir_path( __FILE__ ) . 'class-gamajo-template-loader.php';
 }
 
 /**
  * Template loader for Pitchfork Docs
  * Only need to specify class properties here.
  */
-class Meal_Planner_Template_Loader extends Gamajo_Template_Loader {
+class Pitchfork_Docs_Template_Loader extends Gamajo_Template_Loader {
   /**
    * Prefix for filter names.
    *

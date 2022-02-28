@@ -22,6 +22,11 @@ if ( ! defined( 'WPINC' ) ) {
 // Variable for root directory of this plugin.
 define( 'PITCHFORK_DOCS_BASE_PATH', plugin_dir_path( __FILE__ ) );
 
+// Composer vendor autoload
+if ( file_exists( PITCHFORK_DOCS_BASE_PATH . 'vendor/autoload.php' ) ) {
+	require_once PITCHFORK_DOCS_BASE_PATH . 'vendor/autoload.php';
+}
+
 // Function: Activate.
 // Function: Deactivate.
 // Function: Execute plugin.
@@ -38,31 +43,40 @@ require_once PITCHFORK_DOCS_BASE_PATH . '/inc/enqueue-scripts.php';
 require_once PITCHFORK_DOCS_BASE_PATH . '/inc/template-loader/class-pitchfork-docs-templates.php';
 
 
-add_filter( 'template_include', 'get_pitchfork_docs_templates' );
+
+/**
+ * get_pitchfork_docs_templates
+ *
+ * @param  mixed $template
+ * @return void
+ */
 function get_pitchfork_docs_templates( $template ) {
 	global $post;
- 
+	
+	// Custom routing for included CPT and related screens.
     if ( 'pitchfork-docs' === $post->post_type ) {
-		// do_action('qm/debug', 'This is a docs CPT');
+
 		$docs_template_loader = new Pitchfork_Docs_Template_Loader();
 
 		if ( is_singular() ) {
-			// do_action('qm/debug', 'This is singular template.');
 
 			$docs_template_loader
 				->get_template_part( 'document' );
 
 		} elseif ( is_archive() ) {
-			// do_action('qm/debug', 'This is archive page for all docs.');
 
 			$docs_template_loader
 				->get_template_part( 'archive-document' );
 
 		}
 		
-    }
+    } else {
+		// Return the normal template file if the request should be ignored.
+		return $template;
+	}
 
 }
+add_filter( 'template_include', 'get_pitchfork_docs_templates' );
 
 
 // ACF configurations.

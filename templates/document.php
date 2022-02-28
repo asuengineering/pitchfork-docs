@@ -14,27 +14,41 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-	<main id="skip-to-content" <?php post_class(); ?>>
+	<main id="skip-to-content">
 
-        <h1>Steve still rules</h1>
+        <div class="container">
+            <div class="row">
+                <article <?php post_class('col'); ?>>
 
-		<?php
+                    <h1>Steve still rules</h1>
 
-		while ( have_posts() ) {
+                    <?php
 
-			the_post();
+                    while ( have_posts() ) {
 
-			get_template_part( 'templates-global/global-banner' );
+                        the_post();
 
-			the_content();
+                        Hybrid\Breadcrumbs\Trail::display();
 
-			// Display the edit post button to logged in users.
-			echo '<footer class="entry-footer"><div class="container"><div class="row"><div class="col-md-12">';
-			edit_post_link( __( 'Edit', 'uds-wordpress-theme' ), '<span class="edit-link">', '</span>' );
-			echo '</div></div></div></footer><!-- end .entry-footer -->';
-		}
+                        the_content();
 
-		?>
+                        // Display the edit post button to logged in users.
+                        echo '<footer class="entry-footer"><div class="container"><div class="row"><div class="col-md-12">';
+                        edit_post_link( __( 'Edit', 'uds-wordpress-theme' ), '<span class="edit-link">', '</span>' );
+                        echo '</div></div></div></footer><!-- end .entry-footer -->';
+                    }
+
+                    ?>
+
+                </article>
+
+                <nav class="col-md-3">
+                    <h3>This is where the TOC would live once the integration is complete.</h3>
+                </nav>
+
+            </div>
+        </div>
+            
 
 	</main><!-- #main -->
 

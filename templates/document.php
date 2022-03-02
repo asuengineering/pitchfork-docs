@@ -14,42 +14,59 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-	<main id="skip-to-content">
+<main id="skip-to-content">
 
-        <div class="container">
-            <div class="row">
-                <article <?php post_class('col'); ?>>
+	<?php
 
-                    <h1>Steve still rules</h1>
+	while ( have_posts() ) {
+
+		the_post();
+
+        ?>
+		<div class="container document-container">
+		<div class="row">
+		<div class="col-md-9">
+
+            <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+                <header class="entry-header">
 
                     <?php
-
-                    while ( have_posts() ) {
-
-                        the_post();
-
+                        the_title( '<h1 class="article entry-title">', '</h1>' );
                         Hybrid\Breadcrumbs\Trail::display();
-
-                        the_content();
-
-                        // Display the edit post button to logged in users.
-                        echo '<footer class="entry-footer"><div class="container"><div class="row"><div class="col-md-12">';
-                        edit_post_link( __( 'Edit', 'uds-wordpress-theme' ), '<span class="edit-link">', '</span>' );
-                        echo '</div></div></div></footer><!-- end .entry-footer -->';
-                    }
-
                     ?>
 
-                </article>
+                </header><!-- .entry-header -->
 
-                <nav class="col-md-3">
-                    <h3>This is where the TOC would live once the integration is complete.</h3>
-                </nav>
+                <?php 
 
-            </div>
-        </div>
+                echo '<div class="entry-content">';
+
+                    the_content(); 
+
+                echo '</div>';
+
+                // Display the edit post button to logged in users.
+                echo '<footer class="entry-footer">';
+                edit_post_link( __( 'Edit', 'uds-wordpress-theme' ), '<span class="edit-link">', '</span>' );
+                echo '</footer><!-- end .entry-footer -->';
+
+                ?>
+
+            </article>
+        </div><!-- end .col -->
+
+        <aside class="col-md-3">
+            <h3>This is where the TOC would live once the integration is complete.</h3>
+            <div class="render-toc sticky-top"></div>
+        </aside>
+
+        </div><!-- end .row -->
+        </div><!-- end .container -->
             
-
+    <?php 
+    }  // End loop
+    ?>
+    
 	</main><!-- #main -->
 
 <?php

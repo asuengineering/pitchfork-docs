@@ -15,13 +15,19 @@
 
 // }
 
-add_action( 'enqueue_block_editor_assets', 'pitchfork_blocks_enqueue_block_scripts' );
-function pitchfork_blocks_enqueue_block_scripts() {
+add_action( 'wp_enqueue_scripts', 'pitchfork_docs_enqueue_tocbot' );
+function pitchfork_docs_enqueue_tocbot() {
 
-		$the_plugin     = get_plugin_data( plugin_dir_path( __DIR__ ) . 'pitchfork-blocks.php' );
+	if (is_singular('pitchfork-docs')) {
+
+		$the_plugin     = get_plugin_data( plugin_dir_path( __DIR__ ) . 'pitchfork-docs.php' );
 		$the_version    = $the_plugin['Version'];
-		$plugin_version = $the_version . '.' . filemtime( plugin_dir_path( __DIR__ ) . 'js/block-variations.js' );
-	
-	wp_enqueue_script( 'uds-block-variations', plugin_dir_url( __DIR__ ) . 'js/block-variations.js',  array( 'wp-blocks', 'wp-dom' ), $plugin_version , true );
+		$plugin_version = $the_version . '.' . filemtime( plugin_dir_path( __DIR__ ) . 'js/tocbot-init.js' );
 
+		wp_enqueue_script( 'tocbot-source', plugin_dir_url( __DIR__ ) . '/tocbot/tocbot.min.js',  array(), '4.12.0' , true );
+		wp_enqueue_script( 'tocbot-init', plugin_dir_url( __DIR__ ) . '/js/tocbot-init.js',  array( 'tocbot-source' ), $plugin_version , true );
+		wp_enqueue_style(  'tocbot-style', plugin_dir_url( __DIR__ ) . '/tocbot/tocbot.css',  array(), '4.12.0' , false );
+
+	}
+	
 }

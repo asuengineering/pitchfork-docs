@@ -32,7 +32,14 @@ get_header();
 
                     <?php
                         the_title( '<h1 class="article entry-title">', '</h1>' );
-                        Hybrid\Breadcrumbs\Trail::display();
+                        $crumbs = array(
+                            'list_tag' => 'ul',
+                            'item_tag' => 'li',
+                            'list_class' => 'breadcrumb',
+                            'item_class' => 'breadcrumb-item',
+                            'title_class' => 'd-none'
+                        );
+                        Hybrid\Breadcrumbs\Trail::display($crumbs);
                     ?>
 
                 </header><!-- .entry-header -->
@@ -56,8 +63,10 @@ get_header();
         </div><!-- end .col -->
 
         <aside class="col-md-3">
-            <h3>This is where the TOC would live once the integration is complete.</h3>
-            <div class="render-toc sticky-top"></div>
+            <div class="toc-wrapper sticky-top" style="top:10rem;">
+                <h3>This is where the TOC would live once the integration is complete.</h3>
+                <div class="render-toc "></div>
+            </div>
         </aside>
 
         </div><!-- end .row -->

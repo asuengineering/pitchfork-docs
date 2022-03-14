@@ -31,3 +31,18 @@ function pitchfork_docs_enqueue_tocbot() {
 	}
 	
 }
+
+add_action( 'wp_enqueue_scripts', 'pitchfork_docs_enqueue_styles' );
+function pitchfork_docs_enqueue_styles() {
+	
+	if (is_singular('pitchfork-docs')) {
+
+		$the_plugin     = get_plugin_data( plugin_dir_path( __DIR__ ) . 'pitchfork-docs.php' );
+		$the_version    = $the_plugin['Version'];
+		$plugin_version = $the_version . '.' . filemtime( plugin_dir_path( __DIR__ ) . 'css/document.css' );
+
+		wp_enqueue_style(  'pitchfork-docs', plugin_dir_url( __DIR__ ) . '/tocbot/tocbot.min.js',  array(), $plugin_version , false );
+
+	}
+	
+}

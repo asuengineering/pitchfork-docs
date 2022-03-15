@@ -1,0 +1,20 @@
+/*--------------------------------------------------------------
+Pitchfork Docs, Styles
+
+0. Import design tokens from Unity
+1. Single document
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+Single Document
+--------------------------------------------------------------*/
+.single-pitchfork-docs main { padding: 4rem 0; background-color: #fafafa; }
+
+.single-pitchfork-docs .document-container { background-color: #ffffff; border: 1px solid #e8e8e8; }
+
+.single-pitchfork-docs .document-container .breadcrumb { border-bottom: 1px solid #e8e8e8; padding-bottom: 2rem; margin-bottom: 2rem; }
+
+.single-pitchfork-docs .document-container .entry-header { margin-bottom: 4rem; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicGZkb2NzLmNzcyIsInNvdXJjZXMiOlsicGZkb2NzLnNjc3MiLCJfdWRzLWRlc2lnbi10b2tlbnMuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7Z0VBS2dFO0FBSWhFOztnRUFFZ0U7QUFFaEUsQUFDSSxzQkFEa0IsQ0FDbEIsSUFBSSxDQUFDLEVBQ0QsT0FBTyxFQ29HTSxJQUFJLENEcEdZLENBQUMsRUFDOUIsZ0JBQWdCLEVDc0JBLE9BQU8sR0RyQjFCOztBQUpMLEFBS0ksc0JBTGtCLENBS2xCLG1CQUFtQixDQUFDLEVBQ2hCLGdCQUFnQixFQ1lELE9BQU8sRURYdEIsTUFBTSxFQUFFLEdBQUcsQ0FBQyxLQUFLLENDbUJELE9BQU8sR0RSMUI7O0FBbEJMLEFBU1Esc0JBVGMsQ0FLbEIsbUJBQW1CLENBSWYsV0FBVyxDQUFDLEVBQ1IsYUFBYSxFQUFFLEdBQUcsQ0FBQyxLQUFLLENDZ0JaLE9BQU8sRURmbkIsY0FBYyxFQ3VGTCxJQUFJLEVEdEZiLGFBQWEsRUNzRkosSUFBSSxHRHJGaEI7O0FBYlQsQUFlUSxzQkFmYyxDQUtsQixtQkFBbUIsQ0FVZixhQUFhLENBQUMsRUFDVixhQUFhLEVDc0ZKLElBQUksR0RyRmhCIn0= */
+
+/*# sourceMappingURL=pfdocs.css.map */

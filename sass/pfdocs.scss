@@ -1,0 +1,33 @@
+/*--------------------------------------------------------------
+Pitchfork Docs, Styles
+
+0. Import design tokens from Unity
+1. Single document
+--------------------------------------------------------------*/
+
+@import 'uds-design-tokens';
+
+/*--------------------------------------------------------------
+Single Document
+--------------------------------------------------------------*/
+
+.single-pitchfork-docs {
+    main {
+        padding: $uds-size-spacing-8 0;
+        background-color: $uds-color-base-gray-1;
+    }
+    .document-container {
+        background-color: $uds-color-base-white;
+        border: 1px solid $uds-color-base-gray-2;
+
+        .breadcrumb {
+            border-bottom: 1px solid $uds-color-base-gray-2;
+            padding-bottom: $uds-size-spacing-4;
+            margin-bottom: $uds-size-spacing-4;
+        }
+
+        .entry-header {
+            margin-bottom: $uds-size-spacing-8;
+        }
+    }
+}

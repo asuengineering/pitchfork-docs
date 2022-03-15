@@ -31,7 +31,6 @@ get_header();
                 <header class="entry-header">
 
                     <?php
-                        the_title( '<h1 class="article entry-title">', '</h1>' );
                         $crumbs = array(
                             'list_tag' => 'ul',
                             'item_tag' => 'li',
@@ -40,6 +39,9 @@ get_header();
                             'title_class' => 'd-none'
                         );
                         Hybrid\Breadcrumbs\Trail::display($crumbs);
+
+                        the_title( '<h1 class="article entry-title">', '</h1>' );
+                        echo '<p class="lead">' . get_the_excerpt() . '</p>';
                     ?>
 
                 </header><!-- .entry-header -->
@@ -64,7 +66,7 @@ get_header();
 
         <aside class="col-md-3">
             <div class="toc-wrapper sticky-top" style="top:10rem;">
-                <h3>This is where the TOC would live once the integration is complete.</h3>
+                <h3>Contents</h3>
                 <div class="render-toc "></div>
             </div>
         </aside>

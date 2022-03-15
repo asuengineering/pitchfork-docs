@@ -43,7 +43,7 @@ function pitchfork_docs_register_post_type() {
 		'label'                 => __( 'Document', 'pitchfork-docs' ),
 		'description'           => __( 'Separate your docs from the rest of your content.', 'pitchfork-docs' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'page-attributes' ),
+		'supports'              => array( 'title', 'editor', 'excerpt', 'page-attributes' ),
 		'hierarchical'          => true,
 		'public'                => true,
 		'show_ui'               => true,

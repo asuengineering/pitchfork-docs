@@ -47,10 +47,9 @@ Thumbs.db
 !assets/js/vendor/
 wpcs/
 /vendor/*
+!/vendor/autoload.php
+!/vendor/composer/
 !/vendor/justintadlock/
-
-/vendor/justintadlock/*
-!/vendor/justintadlock/hybrid-breadcrumbs/
 
 
 # Bower #

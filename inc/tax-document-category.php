@@ -32,16 +32,19 @@ function pitchfork_docs_register_tax_doc_category() {
 		'items_list'                 => __( 'Categories list', 'pitchfork-docs' ),
 		'items_list_navigation'      => __( 'Categories list navigation', 'pitchfork-docs' ),
 	);
-	$args = array(
-		'labels'                     => $labels,
-		'hierarchical'               => true,
-		'public'                     => true,
-		'show_ui'                    => true,
-		'show_admin_column'          => true,
-		'show_in_nav_menus'          => true,
-		'show_tagcloud'              => false,
-		'show_in_rest'               => true,
-		'rewrite'					 => array('slug' => 'doc-category', 'with_front' => false),
+	$args   = array(
+		'labels'            => $labels,
+		'hierarchical'      => true,
+		'public'            => true,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'show_in_nav_menus' => true,
+		'show_tagcloud'     => false,
+		'show_in_rest'      => true,
+		'rewrite'           => array(
+			'slug'       => 'doc-category',
+			'with_front' => false,
+		),
 	);
 	register_taxonomy( 'pitchfork-docs-category', array( 'pitchfork-docs' ), $args );
 

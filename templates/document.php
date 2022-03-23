@@ -22,66 +22,63 @@ get_header();
 
 		the_post();
 
-        ?>
+		?>
 		<div class="container document-container">
 		<div class="row">
 		<div class="col-md-9">
 
-            <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-                <header class="entry-header">
+			<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+				<header class="entry-header">
 
-                    <?php
-                        $crumbs = array(
-                            'list_tag' => 'ul',
-                            'item_tag' => 'li',
-                            'list_class' => 'breadcrumb',
-                            'item_class' => 'breadcrumb-item',
-                            'title_class' => 'd-none',
-                            'post_taxonomy' => array(
-                                'pitchfork-docs' => 'pitchfork-docs-category',
-                            )
-                        );
-                        Hybrid\Breadcrumbs\Trail::display($crumbs);
+					<?php
+						$crumbs = array(
+							'list_tag'      => 'ul',
+							'item_tag'      => 'li',
+							'list_class'    => 'breadcrumb',
+							'item_class'    => 'breadcrumb-item',
+							'title_class'   => 'd-none',
+							'post_taxonomy' => array(
+								'pitchfork-docs' => 'pitchfork-docs-category',
+							),
+						);
+						Hybrid\Breadcrumbs\Trail::display( $crumbs );
 
-                        the_title( '<h1 class="article entry-title">', '</h1>' );
-                        echo '<p class="lead">' . get_the_excerpt() . '</p>';
-                    ?>
+						the_title( '<h1 class="article entry-title">', '</h1>' );
+						echo '<p class="lead">' . wp_kses_post( get_the_excerpt() ) . '</p>';
+						?>
 
-                </header><!-- .entry-header -->
+				</header><!-- .entry-header -->
 
-                <?php 
+				<?php
 
-                echo '<div class="entry-content">';
+				echo '<div class="entry-content">';
 
-                    the_content(); 
+					the_content();
 
-                echo '</div>';
+				echo '</div>';
 
-                // Display the edit post button to logged in users.
-                echo '<footer class="entry-footer">';
-                edit_post_link( __( 'Edit', 'uds-wordpress-theme' ), '<span class="edit-link">', '</span>' );
-                echo '</footer><!-- end .entry-footer -->';
+				// Display the edit post button to logged in users.
+				echo '<footer class="entry-footer">';
+				edit_post_link( __( 'Edit', 'pitchfork-docs' ), '<span class="edit-link">', '</span>' );
+				echo '</footer><!-- end .entry-footer -->';
 
-                ?>
+				?>
 
-            </article>
-        </div><!-- end .col -->
+			</article>
+		</div><!-- end .col -->
 
-        <aside class="col-md-3">
-            <div class="toc-spacer"></div>
-            <div class="toc-wrapper">
-                <h3>Contents</h3>
-                <div class="toc render-toc "></div>
-            </div>
-        </aside>
+		<aside class="col-md-3">
+			<div class="toc-spacer"></div>
+			<div class="toc-wrapper">
+				<h3>Contents</h3>
+				<div class="toc render-toc "></div>
+			</div>
+		</aside>
 
-        </div><!-- end .row -->
-        </div><!-- end .container -->
-            
-    <?php 
-    }  // End loop
-    ?>
-    
+		</div><!-- end .row -->
+		</div><!-- end .container -->
+	<?php }  // End loop ?>
+
 	</main><!-- #main -->
 
 <?php

@@ -40,21 +40,19 @@ require_once PITCHFORK_DOCS_BASE_PATH . '/inc/enqueue-scripts.php';
 
 // Gamajo Template Loader Script.
 // Checks for the correct template files within the theme, uses included files as a fallback.
-require_once PITCHFORK_DOCS_BASE_PATH . '/inc/template-loader/class-pitchfork-docs-templates.php';
-
-
+require_once PITCHFORK_DOCS_BASE_PATH . '/inc/template-loader/class-pitchfork-docs-template-loader.php';
 
 /**
- * get_pitchfork_docs_templates
+ * Custom routing for included templates for the established CPT.
+ * Enabled by the use of the template loader class above.
  *
  * @param  mixed $template
  * @return void
  */
 function get_pitchfork_docs_templates( $template ) {
 	global $post;
-	
-	// Custom routing for included CPT and related screens.
-    if ( 'pitchfork-docs' === $post->post_type ) {
+
+	if ( 'pitchfork-docs' === $post->post_type ) {
 
 		$docs_template_loader = new Pitchfork_Docs_Template_Loader();
 
@@ -63,18 +61,17 @@ function get_pitchfork_docs_templates( $template ) {
 			$docs_template_loader
 				->get_template_part( 'document' );
 
-		} elseif ( is_tax( 'pitchfork-docs-category') ) {
+		} elseif ( is_tax( 'pitchfork-docs-category' ) ) {
 
 			$docs_template_loader
 				->get_template_part( 'document-category' );
-	
+
 		} elseif ( is_archive() ) {
 
 			$docs_template_loader
 				->get_template_part( 'archive-document' );
-				
+
 		}
-		
 	} else {
 		// Return the normal template file if the request should be ignored.
 		return $template;
@@ -82,8 +79,3 @@ function get_pitchfork_docs_templates( $template ) {
 
 }
 add_filter( 'template_include', 'get_pitchfork_docs_templates' );
-
-
-// ACF configurations.
-// require_once PITCHFORK_DOCS_BASE_PATH . '/inc/acf-config.php';
-// require_once PITCHFORK_BLOCKS_BASE_PATH . '/inc/acf-register-blocks.php';

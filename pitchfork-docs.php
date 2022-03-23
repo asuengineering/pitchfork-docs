@@ -24,7 +24,6 @@ define( 'PITCHFORK_DOCS_BASE_PATH', plugin_dir_path( __FILE__ ) );
 
 // Composer vendor autoload
 if ( file_exists( PITCHFORK_DOCS_BASE_PATH . 'vendor/autoload.php' ) ) {
-	do_action('qm/debug', 'Composer available');
 	require_once PITCHFORK_DOCS_BASE_PATH . 'vendor/autoload.php';
 }
 
@@ -64,14 +63,19 @@ function get_pitchfork_docs_templates( $template ) {
 			$docs_template_loader
 				->get_template_part( 'document' );
 
+		} elseif ( is_tax( 'pitchfork-docs-category') ) {
+
+			$docs_template_loader
+				->get_template_part( 'document-category' );
+	
 		} elseif ( is_archive() ) {
 
 			$docs_template_loader
 				->get_template_part( 'archive-document' );
-
+				
 		}
 		
-    } else {
+	} else {
 		// Return the normal template file if the request should be ignored.
 		return $template;
 	}

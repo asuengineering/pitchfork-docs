@@ -36,7 +36,10 @@ get_header();
                             'item_tag' => 'li',
                             'list_class' => 'breadcrumb',
                             'item_class' => 'breadcrumb-item',
-                            'title_class' => 'd-none'
+                            'title_class' => 'd-none',
+                            'post_taxonomy' => array(
+                                'pitchfork-docs' => 'pitchfork-docs-category',
+                            )
                         );
                         Hybrid\Breadcrumbs\Trail::display($crumbs);
 
@@ -65,9 +68,10 @@ get_header();
         </div><!-- end .col -->
 
         <aside class="col-md-3">
-            <div class="toc-wrapper sticky-top" style="top:10rem;">
+            <div class="toc-spacer"></div>
+            <div class="toc-wrapper">
                 <h3>Contents</h3>
-                <div class="render-toc "></div>
+                <div class="toc render-toc "></div>
             </div>
         </aside>
 

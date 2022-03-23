@@ -31,3 +31,207 @@ Single Document
         }
     }
 }
+
+/*--------------------------------------------------------------
+Archive Documents
+--------------------------------------------------------------*/
+
+.post-type-archive-pitchfork-docs {
+
+    main {
+        padding: $uds-size-spacing-8 0;
+        background-color: $uds-color-base-gray-1;
+    }
+
+    .document-container {
+        .entry-header {
+            margin-bottom: $uds-size-spacing-8;
+        }
+
+        .col {
+            padding-bottom: $uds-size-spacing-4;
+        }
+    }
+
+    .document-card {
+
+        .category, .description, .count {
+            padding:0 $uds-size-spacing-4;
+        }
+
+        .category {
+            padding-top: $uds-size-spacing-2;
+        }
+
+        .doclist {
+            margin-top: auto;
+            padding: 0;
+
+            li { 
+                margin-left: $uds-size-spacing-5;
+                padding: 4px 8px;
+                &::marker {
+                    content: "\00BB";
+                    margin-left:10px;
+                }
+            }
+
+            a {
+                display:block;
+            }
+        }
+        
+        .count {
+            padding-top: $uds-size-spacing-2;
+            padding-bottom: $uds-size-spacing-4;
+        }
+    }
+
+    .pagination {
+        .page-item:not(.active) .page-link{
+            border: 1px solid $uds-color-base-gray-2;
+        }
+
+        span.page-link {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+    }
+
+}
+
+/*--------------------------------------------------------------
+Category archive
+--------------------------------------------------------------*/
+
+.tax-pitchfork-docs-category {
+
+    main {
+        padding: $uds-size-spacing-8 0;
+        background-color: $uds-color-base-gray-1;
+    }
+
+    .sidebar-toggler {
+        background-color: $uds-color-base-white;
+    }
+
+    #doc-category-list {
+        background-color: $uds-color-base-white;
+        margin-bottom: $uds-size-spacing-4;
+    }
+
+    .document-container {
+
+        article {
+            background-color: $uds-color-base-white;
+            border:1px solid $uds-color-base-gray-3;
+            padding:  $uds-size-spacing-3 $uds-size-spacing-4;
+            margin-bottom: $uds-size-spacing-3;
+        }
+
+        .entry-header {
+            margin-bottom: $uds-size-spacing-2;
+        }
+
+        .modified {
+            color: $uds-color-base-gray-5;
+        }
+    }
+
+    .pagination {
+        .page-item:not(.active) .page-link{
+            border: 1px solid $uds-color-base-gray-2;
+        }
+
+        span.page-link {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+TOC Formatting
+--------------------------------------------------------------*/
+.toc-spacer {
+    // Should force the TOC down the page a bit then scroll out of the way.
+    height: $uds-size-spacing-14;
+}
+
+.toc-wrapper {
+    position: sticky;
+    top: 10rem;
+    // z-index: 1020;
+    margin-left: $uds-size-spacing-2;
+}
+
+.toc {
+    overflow-y:hidden;
+
+    > .toc-list {
+        overflow: hidden;
+        position: relative;
+        margin: 0;
+        padding-left: $uds-size-spacing-2;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    a.toc-link {
+        color: $uds-color-base-gray-7;
+        text-decoration:none;
+        height: 100%;
+
+        // &:hover {
+        //     font-weight:700;
+        // }
+    }
+
+    a.toc-link::before {
+        background-color: $uds-color-base-gray-2;
+        content: ' ';
+        display: inline-block;
+        height: inherit;
+        left: 0;
+        margin-top: -1px;
+        position: absolute;
+        width: 2px;
+    }
+    
+    a.is-active-link::before {
+        background-color: $uds-color-base-gold;
+    }
+
+    .is-collapsible {
+        max-height: 1000px;
+        overflow: hidden;
+        transition: all 300ms ease-in-out;
+        padding-left: $uds-size-spacing-2;
+    }
+    
+    .is-collapsed {
+        max-height: 0;
+    }
+    
+    .is-position-fixed {
+        position: fixed !important;
+        top: 0;
+    }
+    
+    .is-active-link {
+        font-weight: 700;
+    }
+}
+
+.js-toc {
+	overflow-y: hidden;
+}
+
+
+
+
+
+
+

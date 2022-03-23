@@ -138,6 +138,12 @@ Category archive
         }
     }
 
+    #category-sidebar {
+        h4 {
+            margin-top: 0;
+        }
+    }
+
     .pagination {
         .page-item:not(.active) .page-link{
             border: 1px solid $uds-color-base-gray-2;

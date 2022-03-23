@@ -20,6 +20,7 @@
 .tax-pitchfork-docs-category .document-container article{background-color:#fff;border:1px solid #d0d0d0;padding:1.5rem 2rem;margin-bottom:1.5rem}
 .tax-pitchfork-docs-category .document-container .entry-header{margin-bottom:1rem}
 .tax-pitchfork-docs-category .document-container .modified{color:#747474}
+.tax-pitchfork-docs-category #category-sidebar h4{margin-top:0}
 .tax-pitchfork-docs-category .pagination .page-item:not(.active) .page-link{border:1px solid #e8e8e8}
 .tax-pitchfork-docs-category .pagination span.page-link{padding-left:12px;padding-right:12px}
 .toc-spacer{height:7rem}

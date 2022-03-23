@@ -34,45 +34,6 @@ get_header();
 
 	<div class="container">
 		<div class="row">
-			<div class="d-none d-lg-block col-md-4">
-				<h4>All Document Categories</h4>
-
-				<?php
-				$doc_categories = get_terms(
-					array(
-						'taxonomy'   => 'pitchfork-docs-category',
-						'hide_empty' => true,
-						'orderby'    => 'menu_order',
-					)
-				);
-
-				if ( ! empty( $doc_categories ) ) {
-					?>
-					<div class="sidebar-toggler" data-toggle="collapse" data-target="#doc-category-list" aria-expanded="false" aria-controls="doc-category-left">
-						<p>Select Category</p>
-						<span class="fas fa-chevron-up"></span>
-					</div>
-					<nav id="doc-category-list" class="sidebar collapse" aria-label="Select Category">
-
-					<?php
-					foreach ( $doc_categories as $doc_category ) {
-						echo '<div class="nav-link-container">';
-
-						if ( get_queried_object_id() === $doc_category->term_id ) {
-							$isactive = ' is-active';
-						} else {
-							$isactive = '';
-						}
-
-						echo '<a class="nav-link' . wp_kses_post( $isactive ) . '" href="' . wp_kses_post( get_term_link( $doc_category ) ) . '">' . wp_kses_post( $doc_category->name ) . '</a>';
-						echo '</div>';
-					}
-					echo '</nav>';
-				}
-				?>
-
-			</div>
-
 			<div class="col document-container">
 
 				<?php
@@ -123,6 +84,46 @@ get_header();
 
 				?>
 			</div>
+
+			<div id="category-sidebar" class="d-none d-lg-block col-md-4">
+				<h4>All Document Categories</h4>
+
+				<?php
+				$doc_categories = get_terms(
+					array(
+						'taxonomy'   => 'pitchfork-docs-category',
+						'hide_empty' => true,
+						'orderby'    => 'menu_order',
+					)
+				);
+
+				if ( ! empty( $doc_categories ) ) {
+					?>
+					<div class="sidebar-toggler" data-toggle="collapse" data-target="#doc-category-list" aria-expanded="false" aria-controls="doc-category-left">
+						<p>Select Category</p>
+						<span class="fas fa-chevron-up"></span>
+					</div>
+					<nav id="doc-category-list" class="sidebar collapse" aria-label="Select Category">
+
+					<?php
+					foreach ( $doc_categories as $doc_category ) {
+						echo '<div class="nav-link-container">';
+
+						if ( get_queried_object_id() === $doc_category->term_id ) {
+							$isactive = ' is-active';
+						} else {
+							$isactive = '';
+						}
+
+						echo '<a class="nav-link' . wp_kses_post( $isactive ) . '" href="' . wp_kses_post( get_term_link( $doc_category ) ) . '">' . wp_kses_post( $doc_category->name ) . '</a>';
+						echo '</div>';
+					}
+					echo '</nav>';
+				}
+				?>
+
+			</div>
+
 
 		</div>
 	</div>

@@ -24,7 +24,7 @@ This plugin leverages the following JS / Composer libraries for functionality de
 
 ## Notes
 
-** Table of Contents **
+**Table of Contents**
 - The links within the table-of-contents sidebar are dependent on all headings within the body of a document having `id`s established.
 - WordPress 5.9.1 shipped with an expirimental feature which automatically creates `id`s for any included heading block in a post/page.
 - WordPress 6.0 is expected to ship with a UI in the block editor which enables this feature by default.
@@ -34,8 +34,6 @@ This plugin leverages the following JS / Composer libraries for functionality de
 
 - Run `npm install` and `composer install` prior to local development.
 - SASS and JS compile & watch tasks are triggered via WP-Gulp and `npm start` from the project root.
-
-<hr>
 
 ## Release Notes
 

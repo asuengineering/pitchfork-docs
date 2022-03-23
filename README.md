@@ -39,6 +39,7 @@ This plugin leverages the following JS / Composer libraries for functionality de
 
 ## Release Notes
 
-### Version 1.0
+### Version 1.1
 
-- Initial deployment of the plugin.
+- Initial deployment of the plugin. 1.0.
+- Quickly patched missing composer assets in the 1.1 release. 

@@ -2,12 +2,12 @@
 /**
  * Plugin Name:     Pitchfork Docs
  * Plugin URI:      http://github.com/ASU-Engineering/Pitchfork-Docs
- * Description:     A custom post type created to produce documentation style pages. Autocompleted table-of-contents, separate taxonomies from posts/pages.
- * Author:          Steve Ryan
+ * Description:     Really simple documentation style page template. Documents come with and autocompleted table-of-contents and a separate taxonomy structure foe easy document grouping. Compatible with the <a href="https://github.com/ASU-KE/UDS-WordPress-Theme">UDS-WordPress theme</a> from ASU KE.
+ * Author:          Steve Ryan, ASU Engineering
  * Author URI:      https://engineering.asu.edu
  * Text Domain:     pitchfork-docs
  * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         1.0
  *
  * @package         Pitchfork_Docs
  *

@@ -80,7 +80,7 @@ get_header();
 					echo '<p class="lead">There are no documents available.</p>';
 				}
 
-				uds_wp_pagination();
+				pitchfork_pagination();
 
 				?>
 			</div>

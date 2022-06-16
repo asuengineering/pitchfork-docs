@@ -1,7 +1,8 @@
 .single-pitchfork-docs main{padding:4rem 0;background-color:#fafafa}
 .single-pitchfork-docs .document-container{background-color:#fff;border:1px solid #e8e8e8}
-.single-pitchfork-docs .document-container .breadcrumb{border-bottom:1px solid #e8e8e8;padding-bottom:2rem;margin-bottom:2rem}
-.single-pitchfork-docs .document-container .entry-header{margin-bottom:4rem}
+.single-pitchfork-docs .document-container .breadcrumb{border-bottom:1px solid #e8e8e8;padding-bottom:2rem;margin-bottom:3rem}
+.single-pitchfork-docs .document-container article.hentry{padding:1.5rem}
+.single-pitchfork-docs .document-container .entry-header{display:block;margin-bottom:4rem;padding-top:0;padding-bottom:0}
 .post-type-archive-pitchfork-docs main{padding:4rem 0;background-color:#fafafa}
 .post-type-archive-pitchfork-docs .document-container .entry-header{margin-bottom:4rem}
 .post-type-archive-pitchfork-docs .document-container .col{padding-bottom:2rem}

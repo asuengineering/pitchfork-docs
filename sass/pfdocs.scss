@@ -23,11 +23,18 @@ Single Document
         .breadcrumb {
             border-bottom: 1px solid $uds-color-base-gray-2;
             padding-bottom: $uds-size-spacing-4;
-            margin-bottom: $uds-size-spacing-4;
+            margin-bottom: $uds-size-spacing-6;
+        }
+
+        article.hentry {
+            padding: $uds-size-spacing-3;
         }
 
         .entry-header {
+            display:block;
             margin-bottom: $uds-size-spacing-8;
+            padding-top:0;
+            padding-bottom: 0;
         }
     }
 }

@@ -37,6 +37,10 @@ This plugin leverages the following JS / Composer libraries for functionality de
 
 ## Release Notes
 
+### Version 1.2
+
+- CSS adjustments to be inline with current version of Pitchfork theme (v1.1)
+
 ### Version 1.1
 
 - Initial deployment of the plugin. 1.0.

@@ -7,7 +7,7 @@
  * Author URI:      https://engineering.asu.edu
  * Text Domain:     pitchfork-docs
  * Domain Path:     /languages
- * Version:         1.1
+ * Version:         1.2
  *
  * @package         Pitchfork_Docs
  *

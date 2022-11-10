@@ -37,6 +37,12 @@ This plugin leverages the following JS / Composer libraries for functionality de
 
 ## Release Notes
 
+### Version 1.3
+
+- More style adjustments to the initial card layout at `/docs`. Better spacing within each category card.
+- Links within `/docs` archive page now reflect the permalink for the document.
+- Added larger default top-margin to H2 elements within each document. Provides better visual separation between the different sections on the page.
+
 ### Version 1.2
 
 - CSS adjustments to be inline with current version of Pitchfork theme (v1.1)

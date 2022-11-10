@@ -75,13 +75,17 @@ get_header();
 					echo '<div class="col">';
 					echo '<div class="document-card card">';
 					echo '<h3 class="category">' . wp_kses_post( $doc_category->name ) . '</h3>';
-					echo '<p class="description">' . wp_kses_post( $doc_category->description ) . '</p>';
+					if (! empty($doc_category->description)) {
+						echo '<p class="description">' . wp_kses_post( $doc_category->description ) . '</p>';
+					}
+					
 
 
 					echo '<ul class="doclist">';
 
 					foreach ( $documents->posts as $document ) {
-						echo '<li><a href="' . wp_kses_post( $document->guid ) . '" title="' . wp_kses_post( $document->post_title ) . '">' . wp_kses_post( $document->post_title ) . '</a></li>';
+						do_action('qm/debug', $document);
+						echo '<li><a href="' .  esc_url( get_permalink($document) ) . '" title="' . wp_kses_post( $document->post_title ) . '">' . wp_kses_post( $document->post_title ) . '</a></li>';
 					}
 
 					echo '</ul>';

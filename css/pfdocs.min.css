@@ -3,16 +3,17 @@
 .single-pitchfork-docs .document-container .breadcrumb{border-bottom:1px solid #e8e8e8;padding-bottom:2rem;margin-bottom:3rem}
 .single-pitchfork-docs .document-container article.hentry{padding:1.5rem}
 .single-pitchfork-docs .document-container .entry-header{display:block;margin-bottom:4rem;padding-top:0;padding-bottom:0}
+.single-pitchfork-docs .document-container .entry-content h2 ~ h2{margin-top:6rem}
 .post-type-archive-pitchfork-docs main{padding:4rem 0;background-color:#fafafa}
 .post-type-archive-pitchfork-docs .document-container .entry-header{margin-bottom:4rem}
 .post-type-archive-pitchfork-docs .document-container .col{padding-bottom:2rem}
 .post-type-archive-pitchfork-docs .document-card .category,.post-type-archive-pitchfork-docs .document-card .description,.post-type-archive-pitchfork-docs .document-card .count{padding:0 2rem}
 .post-type-archive-pitchfork-docs .document-card .category{padding-top:1rem}
-.post-type-archive-pitchfork-docs .document-card .doclist{margin-top:auto;padding:0}
+.post-type-archive-pitchfork-docs .document-card .doclist{padding:0}
 .post-type-archive-pitchfork-docs .document-card .doclist li{margin-left:2.5rem;padding:4px 8px}
 .post-type-archive-pitchfork-docs .document-card .doclist li::marker{content:"\00BB";margin-left:10px}
 .post-type-archive-pitchfork-docs .document-card .doclist a{display:block}
-.post-type-archive-pitchfork-docs .document-card .count{padding-top:1rem;padding-bottom:2rem}
+.post-type-archive-pitchfork-docs .document-card .count{margin-top:auto;padding-top:2rem;padding-bottom:1rem}
 .post-type-archive-pitchfork-docs .pagination .page-item:not(.active) .page-link{border:1px solid #e8e8e8}
 .post-type-archive-pitchfork-docs .pagination span.page-link{padding-left:12px;padding-right:12px}
 .tax-pitchfork-docs-category main{padding:4rem 0;background-color:#fafafa}
